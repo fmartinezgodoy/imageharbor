@@ -1,0 +1,17 @@
+{
+  "id": "hello",
+  "purpose": "Demo de una aplicación image-first; este ejemplo usa el backend fake",
+  "image": "traefik/whoami:v1.11.0",
+  "port": 8080,
+  "repo": "https://github.com/traefik/whoami",
+  "env": {"WHOAMI_PORT_NUMBER": "8080"},
+  "routes": [
+    {"subdomain": "hello", "path": "/", "prefix": "preserve"},
+    {"subdomain": "alias", "path": "/", "prefix": "preserve"},
+    {"host": "tools.example.test", "path": "/hello", "prefix": "strip"}
+  ],
+  "path_support": true,
+  "canonical_url": "https://hello.apps.example.test/",
+  "resources": {"cpu_m": 100, "memory_mi": 64},
+  "volumes": [{"name": "state", "mount_path": "/data", "size_gi": 1}]
+}

@@ -1,0 +1,17 @@
+{
+  "instance": "personal",
+  "base_domain": "apps.example.test",
+  "backend": "kubectl",
+  "state_dir": "../.local/kubernetes",
+  "kube_context": "REPLACE-WITH-EXPLICIT-CONTEXT",
+  "kubeconfig": "../personal/kubeconfig",
+  "routing_enabled": false,
+  "route_cidrs": [],
+  "allow_public_routes": false,
+  "allow_http": false,
+  "require_digest": true,
+  "allow_volume_delete": false,
+  "log_safe_apps": [],
+  "proxy_namespace": "imageharbor-proxy",
+  "storage_class": "local-path"
+}

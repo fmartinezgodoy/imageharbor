@@ -1,0 +1,9 @@
+{
+  "instance": "lab",
+  "base_domain": "apps.example.test",
+  "backend": "fake",
+  "state_dir": "../.local/fake",
+  "routing_enabled": false,
+  "require_digest": false,
+  "log_safe_apps": ["hello"]
+}

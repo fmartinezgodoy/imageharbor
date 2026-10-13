@@ -1,0 +1,47 @@
+# Chart 41.6.1, verified against upstream values on 2026-10-08.
+image:
+  tag: v3.7.14
+deployment:
+  replicas: 1
+api:
+  dashboard: false
+  insecure: false
+ingressRoute:
+  dashboard:
+    enabled: false
+  healthcheck:
+    enabled: false
+ingressClass:
+  enabled: false
+providers:
+  kubernetesCRD:
+    enabled: true
+    allowCrossNamespace: false
+    allowExternalNameServices: false
+    labelSelector: app.kubernetes.io/managed-by=imageharbor
+    defaultTLSResourcesNamespace: imageharbor-proxy
+    safeNaming: true
+  kubernetesIngress:
+    enabled: false
+  kubernetesGateway:
+    enabled: false
+  kubernetesIngressNGINX:
+    enabled: false
+service:
+  spec:
+    type: ClusterIP
+hostNetwork: false
+core:
+  strictTLSOptions: true
+logs:
+  general:
+    level: ERROR
+  access:
+    enabled: false
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
